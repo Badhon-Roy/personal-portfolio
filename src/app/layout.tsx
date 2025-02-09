@@ -1,7 +1,9 @@
+
+import Navbar from "@/components/shared/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
+import { ThemeProvider } from "../../ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,14 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
-        <div className="max-w-[1400px] mx-auto">
-          {children}
-        </div>
-      </body>
+      <ThemeProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 dark:text-white`}
+        >
+          <Navbar />
+          <div className="max-w-[1400px] mx-auto">{children}</div>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

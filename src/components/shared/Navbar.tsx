@@ -1,42 +1,34 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { IoMdCloseCircleOutline } from "react-icons/io";
+import { IoMdCloseCircleOutline, IoMdMoon, IoMdSunny } from "react-icons/io";
 import { MdOutlineMenu } from "react-icons/md";
-
+import { useTheme } from "../../../ThemeContext";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleDrawer = () => {
-        setIsOpen(!isOpen);
-      };
-    
-      const handleNavClick = () => {
-        setIsOpen(false);
-      };
+  const [isOpen, setIsOpen] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme(); 
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
 
   const navbarLinks = [
-    {
-      path: '/',
-      element: "Home"
-    },
-    {
-      path: '/about',
-      element: "About"
-    },
-    {
-      path: '/allProducts',
-      element: "Shop"
-    }
-  ]
-
+    { path: "/", element: "Home" },
+    { path: "/projects", element: "Projects" },
+    { path: "/allProducts", element: "Shop" },
+  ];
 
 
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="sticky top-0 z-40 hidden bg-white shadow-md lg:block">
+      <div className="sticky top-0 z-40 hidden bg-white shadow-md lg:block dark:bg-gray-800 dark:text-white">
         <div className="navbar max-w-[1400px] mx-auto flex items-center justify-between px-6">
           {/* Logo */}
           <Link href={"/"} className="flex items-center">
@@ -53,14 +45,25 @@ const Navbar = () => {
           <div className="flex gap-8 font-bold">
             {navbarLinks?.map((item, index) => (
               <div
-              className="text-red-600"
+                className="text-gray-800 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                 key={index}
               >
-                {item?.element}
+                <Link href={item.path}>{item.element}</Link>
               </div>
             ))}
           </div>
 
+          {/* Dark/Light Mode Toggle */}
+          <button
+          onClick={toggleTheme}
+          className="p-2 bg-gray-200 rounded-full dark:bg-gray-700"
+        >
+          {isDarkMode ? (
+            <IoMdSunny size={24} className="text-yellow-500" />
+          ) : (
+            <IoMdMoon size={24} className="text-gray-600" />
+          )}
+        </button>
         </div>
       </div>
 
@@ -76,7 +79,7 @@ const Navbar = () => {
 
         {/* Drawer */}
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out dark:bg-gray-800 dark:text-white ${isOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
           {/* Close Button */}
@@ -89,16 +92,15 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col px-6 mt-20 space-y-6 font-bold">
-            {navbarLinks?.map(
-              (item, index) => (
-                <button
-                  key={index}
-                  onClick={handleNavClick}
-                >
-                  {item?.element}
-                </button>
-              )
-            )}
+            {navbarLinks?.map((item, index) => (
+              <button
+                key={index}
+                onClick={handleNavClick}
+                className="text-gray-800 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              >
+                <Link href={item.path}>{item.element}</Link>
+              </button>
+            ))}
           </nav>
         </div>
       </div>
