@@ -53,6 +53,7 @@ const Navbar = () => {
           <div className="flex gap-8 font-bold">
             {navbarLinks?.map((item, index) => (
               <div
+              className="text-red-600"
                 key={index}
               >
                 {item?.element}
@@ -68,7 +69,7 @@ const Navbar = () => {
         {/* Drawer Toggle Button */}
         <button
           onClick={toggleDrawer}
-          className="fixed z-50 p-3 bg-[#fb5770] text-white rounded-full top-4 right-4 shadow-md"
+          className="fixed z-50 p-3 bg-[#019fc7] text-white rounded-full top-4 right-4 shadow-md"
         >
           <MdOutlineMenu size={24} />
         </button>
@@ -81,7 +82,7 @@ const Navbar = () => {
           {/* Close Button */}
           <button
             onClick={toggleDrawer}
-            className="absolute top-4 left-4 p-3 bg-[#fb5770] text-white rounded-full shadow-md"
+            className="absolute top-4 left-4 p-3 bg-[#019fc7] text-white rounded-full shadow-md"
           >
             <IoMdCloseCircleOutline size={24} />
           </button>
