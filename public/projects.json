@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Mega Market",
+        "images" : [
+            "https://i.postimg.cc/kXHxwsQx/mega-Market-1.jpg",
+            "https://i.postimg.cc/hjKxh5nq/mega-Market-2.jpg",
+            "https://i.postimg.cc/qqR3x6gb/mega-Market-3.jpg",
+            "https://i.postimg.cc/x1Hb52T2/mega-Market-4.jpg",
+            "https://i.postimg.cc/9MXRcwPm/mega-Market-5.jpg"
+        ],
+        "description": "MegaMarket is a comprehensive online book web application that caters to a diverse audience, offering a wide range of products including books.",
+        "technologiesUsed": {
+          "frontend": ["Tailwind CSS", "React.js"],
+          "backend": ["Express.js", "JWT"],
+          "database": "MongoDB",
+          "authentication": "Firebase"
+        },
+        "teamMembers": 6,
+         "projectType": "Team",
+        "role": "Back-End Developer",
+        "liveSite": "https://mega-market-6295e.web.app",
+        "clientSiteGitHub": "https://github.com/codeinfinite801/megaMarket",
+        "serverSiteGitHub": "https://github.com/codeinfinite801/magaMarket-server"
+      },
+    {
+        "name": "Vegist",
+        "images" : [
+            "https://i.postimg.cc/L8znf3N4/vegist-project-1.png",
+            "https://i.postimg.cc/TPfhc54V/vegist-project-2.png",
+            "https://i.postimg.cc/Bvpb7Zrd/vegist-project-3.png",
+            "https://i.postimg.cc/hjGjkWgh/vegist-project-4.png",
+            "https://i.postimg.cc/SstsqTNd/vegist-project-5.png"
+        ],
+        "description": "Vegist is an eCommerce platform specializing in a wide range of products. It features a user-friendly interface for seamless shopping, with categories for easy navigation, a responsive design, and efficient product management.",
+        "technologiesUsed": {
+          "frontend": ["Tailwind CSS", "React.js"],
+          "backend": ["Express.js", "JWT"],
+          "database": "MongoDB",
+          "authentication": "Firebase"
+        },
+        "teamMembers": 1,
+         "projectType": "Personal",
+        "role": "Front-End & Back-End Developer",
+        "liveSite": "https://vegist-fdd93.web.app",
+        "clientSiteGitHub": "https://github.com/Badhon-Roy/Vegist-Client",
+        "serverSiteGitHub": "https://github.com/Badhon-Roy/vegist-server"
+      },
+    {
+        "name": "Stationery Shop",
+        "images" : [
+            "https://i.postimg.cc/MHvnQkrg/stationery-Shop-1.jpg",
+            "https://i.postimg.cc/Fz87bPMz/stationery-Shop-2.jpg",
+            "https://i.postimg.cc/PfRpkxCH/stationery-Shop-3.jpg",
+            "https://i.postimg.cc/ZKv9YSNd/stationery-Shop-4.jpg",
+            "https://i.postimg.cc/8z87j0dn/stationery-Shop-5.jpg"
+        ],
+        "description": "Our Stationery Shop offers a wide selection of high-quality office and school supplies to meet the needs of individuals, students, and professionals. We provide a comprehensive range of products, including pens, notebooks, printers, binders, desk organizers, art supplies, and much more. Whether you're looking for everyday essentials or specialized items for projects, our store is stocked with everything you need.",
+        "technologiesUsed": {
+          "frontend": ["Tailwind CSS","Shadcn ui" ,"React.js", "Typescript"],
+          "backend": [ "Node.js","Express.js", "Typescript","JWT"],
+          "database": "MongoDB with Mongoose"
+        },
+        "teamMembers": 1,
+         "projectType": "Personal",
+        "role": "Front-End & Back-End Developer",
+        "liveSite": "https://stationery-shop-client-sandy.vercel.app",
+        "clientSiteGitHub": "https://github.com/Badhon-Roy/Stationery-Shop-Client",
+        "serverSiteGitHub": "https://github.com/Badhon-Roy/Stationery-Shop-Server"
+      }
+      
+]

@@ -1,0 +1,26 @@
+[
+    {
+      "title": "Understanding the MERN Stack",
+      "content": "The MERN stack is a popular set of technologies for building modern web applications. It includes MongoDB, Express.js, React.js, and Node.js, all of which work together seamlessly to create full-stack applications. This blog explains each of these technologies and how they fit into the overall development process.",
+      "image": "https://www.datocms-assets.com/48294/1671537942-mern-stack-1-mern-stack.png?auto=format",
+      "category": "MERN Stack",
+      "author": "Badhon Roy",
+      "date": "2025-02-10"
+    },
+    {
+      "title": "Exploring Asynchronous JavaScript",
+      "content": "Asynchronous JavaScript allows for non-blocking operations, such as making API calls or working with timers, without interrupting the main thread. This blog explains the concepts of callbacks, promises, and async/await, and how to use them effectively in your applications.",
+      "image": "https://lh6.googleusercontent.com/OAw57oKUKtKx9UtbnMPQnUDkiKX4qpKTAJh-TQ3plCYbXj7FGb0VI49Lp5bntNefhcJQ8Mzx_XSyk8Bz6IwGHp5zEBUO_tLGrN3H5SHMQi9d3QU1XkdGgVymWCMsxpVtnugs5PJUwpvPXCu1jQLpgQ",
+      "category": "JavaScript",
+      "author": "Badhon Roy",
+      "date": "2025-02-09"
+    },
+    {
+      "title": "A Comprehensive Guide to TypeScript",
+      "content": "TypeScript is a statically typed superset of JavaScript that helps catch errors during development. This blog provides a comprehensive guide to TypeScript, covering types, interfaces, classes, and how TypeScript improves the development process in large-scale applications.",
+      "image": "https://www.syncfusion.com/blogs/wp-content/uploads/2024/11/TypeScript-Utility-Types-A-Complete-Guide.jpg",
+      "category": "TypeScript",
+      "author": "Badhon Roy",
+      "date": "2025-02-08"
+    }
+  ]

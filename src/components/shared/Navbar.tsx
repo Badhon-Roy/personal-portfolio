@@ -5,10 +5,19 @@ import { useState } from "react";
 import { IoMdCloseCircleOutline, IoMdMoon, IoMdSunny } from "react-icons/io";
 import { MdOutlineMenu } from "react-icons/md";
 import { useTheme } from "../../../ThemeContext";
+import { signOut } from "next-auth/react";
 
-const Navbar = () => {
+type TUserProps = {
+  user?: {
+    name?: string | null | undefined;
+    email?: string | null | undefined;
+    image?: string;
+  }
+}
+
+const Navbar = ({ session }: { session: TUserProps | null }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isDarkMode, toggleTheme } = useTheme(); 
+  const { isDarkMode, toggleTheme } = useTheme();
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -23,6 +32,7 @@ const Navbar = () => {
     { path: "/projects", element: "Projects" },
     { path: "/blog", element: "Blog" },
     { path: "/contact", element: "Contact" },
+    { path: "/dashboard", element: "Dashboard" },
   ];
 
 
@@ -54,17 +64,34 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Dark/Light Mode Toggle */}
-          <button
-          onClick={toggleTheme}
-          className="p-2 bg-gray-200 rounded-full dark:bg-gray-700"
-        >
-          {isDarkMode ? (
-            <IoMdSunny size={24} className="text-yellow-500" />
-          ) : (
-            <IoMdMoon size={24} className="text-gray-600" />
-          )}
-        </button>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center">
+              {
+                session?.user ?
+                  <button onClick={() => signOut()} className="border border-[#00ccff] px-4 py-2 rounded-lg font-medium hover:bg-gradient-to-r from-[#0A767B] to-[#00A7D6] hover:text-black transition duration-200">
+                    Logout
+                  </button> :
+                  <Link
+                    href="/login"
+                    className="border border-[#00ccff] bg-gradient-to-r from-[#0A767B] to-[#00A7D6] hover:from-[#05dae6] hover:to-[#0a7391] transition-all duration-300 px-4 py-2 rounded-lg font-medium"
+                  >
+                    Login
+                  </Link>
+              }
+            </div>
+
+            {/* Dark/Light Mode Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 bg-gray-200 rounded-full dark:bg-gray-700"
+            >
+              {isDarkMode ? (
+                <IoMdSunny size={24} className="text-yellow-500" />
+              ) : (
+                <IoMdMoon size={24} className="text-gray-600" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
