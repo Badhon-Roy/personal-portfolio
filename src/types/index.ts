@@ -1,5 +1,5 @@
 export type TBlog = {
-    _id? : string,
+    _id? : string | undefined,
     title: string,
     content: string,
     image: string,

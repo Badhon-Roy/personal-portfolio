@@ -6,6 +6,7 @@ import { IoMdCloseCircleOutline, IoMdMoon, IoMdSunny } from "react-icons/io";
 import { MdOutlineMenu } from "react-icons/md";
 import { useTheme } from "../../../ThemeContext";
 import { signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 type TUserProps = {
   user?: {
@@ -16,6 +17,7 @@ type TUserProps = {
 }
 
 const Navbar = ({ session }: { session: TUserProps | null }) => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
 
@@ -54,13 +56,17 @@ const Navbar = ({ session }: { session: TUserProps | null }) => {
 
           {/* Navigation Items */}
           <div className="flex gap-8 font-bold">
-            {navbarLinks?.map((item, index) => (
-              <div
-                className="text-gray-800 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-                key={index}
+            {navbarLinks?.map(({ path, element }) => (
+              <Link
+                key={path}
+                href={path}
+                className={`${pathname === path
+                    ? "text-[#00ccff] font-bold text-xl"
+                    : "text-gray-700 hover:text-6eal-700 text-xl"
+                  }`}
               >
-                <Link href={item.path}>{item.element}</Link>
-              </div>
+                {element}
+              </Link>
             ))}
           </div>
 
